@@ -1,0 +1,87 @@
+## File类
+> java.io.File -> 需要导包
+> 其就是操作文件及目录：生成、删除、读取、修改等
+
+### 常用方法
+```java
+/*
+  File类创建：-> 目录 && 文件
+    File file = new File(pathname)
+      绝对路径：new File("d:/a.txt");//默认放到D盘
+      相对路径：new File("a.txt");//默认放到user.dir目录下 ->  user.dir指代当前项目的目录 System.getProperty("user.dir");
+      -> 仅定义文件存放位置，需要调用创建文件方法才会'真正创建'
+
+      // 文件
+      file.createNewFile();//创建文件
+      file.delete();//删除文件
+      file.getAbsolutePath();//绝对路径
+      file.getPath();//相对路径
+      file.getName();//文件名
+      file.length();//文件大小
+      file.lastModified();//文件最后修改时间
+      file.isFile();//是否为文件
+      file.exists();//是否存在
+
+      // 目录
+      file.mkdir();//创建一个目录 -> 若中间某目录缺失则创建失败
+      file.mkdirs();//创建多个目录 -> 若中间某目录缺失则会创建缺失目录
+      file.isDirectory();//是否为目录
+      file.getParentFile();//获取当前目录的父级目录
+      file.list();//返回字符串数组 -> 目录中的文件以及目录的路径名
+      file.listFiles();//返回File数组 -> 表示用此抽象路径名表示的目录中的文件
+*/
+System.out.println(System.getProperty("user.dir"));
+File file = new File("a.txt");//仅定义文件存放位置，需要调用创建文件方法才会'真正创建'
+file.createNewFile();
+// file1.delete();
+System.out.println(file.getPath());
+System.out.println(file.getName());
+System.out.println(file.length());
+System.out.println(file.lastModified());
+System.out.println(file.isFile());
+System.out.println(file.isDirectory());
+System.out.println(file.exists());
+
+File file1 = new File("d:/test/java/file/func");//仅创建目录，d:/test/java/file/func/a.txt -> a.txt会被当作目录创建
+boolean flag = file1.mkdir();
+boolean flag1 = file1.mkdirs();
+System.out.println(flag);
+System.out.println(flag1); 
+```
+
+### 应用
+```java
+/**
+ * 递归遍历目录结构 -> 树状展示
+ */
+import java.io.File;
+public class Demo {
+  public static void main(String[] args){
+    File file = new File("d:/movies");
+    printFile(f,0); 
+  }
+
+  /**
+   * 打印文件信息
+   * @param file 文件名称
+   * @param level 层次数
+   */
+  static void printFile(File file, int level) {
+    // 输出层次数
+    for(int i=0; i<level; i++) {
+      System.out.print("-");
+    }
+
+    // 输出文件名
+    System.out.println(file.getName());
+
+    // 若file是目录，则获取子文件列表并对每个子文件进行相同操作
+    if(file.isDirectory()) {
+      File[] files = file.listFiles();
+      for(File temp: files) {
+        printFile(temp,level+1);
+      }
+    }
+  }
+}
+```
