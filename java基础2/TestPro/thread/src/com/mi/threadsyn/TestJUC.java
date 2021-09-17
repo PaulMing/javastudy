@@ -9,9 +9,9 @@ public class TestJUC {
 
     public static void main(String[] args) {
         CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<String>();
-        for(int i=0; i<100000; i++>) {
+        for(int i=0; i<100000; i++) {
             new Thread(() -> {
-                list.add(Thread.currentThread().getName())
+                list.add(Thread.currentThread().getName());
             }).start();
         }
         System.out.println(list.size());

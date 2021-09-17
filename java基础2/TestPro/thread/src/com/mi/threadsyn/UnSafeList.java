@@ -11,7 +11,7 @@ public class UnSafeList {
         List<String> list = new ArrayList<String>();
         for(int i=0; i<10000; i++) {
             new Thread(() -> {
-                list.add(Thread.currentThread().getName())
+                list.add(Thread.currentThread().getName());
             }).start();
         }
         System.out.println(list.size());
