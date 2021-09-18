@@ -1,7 +1,7 @@
 /*
-   并发问题：购票
+   死锁解决：某一个同步块不同时拥有'两个以上对象的锁'
 */
-package com.mi.threadlock;
+package com.mi.threadsyn.lock;
 
 public class TestDealDeadLock {
     public static void main(String[] args) {
@@ -53,7 +53,6 @@ class MakeupDeal implements Runnable {
                 System.out.println(this.userName + "获得口红");
             };
         }
-
     }
 
     @Override

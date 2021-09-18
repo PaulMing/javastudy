@@ -1,7 +1,7 @@
 /*
-   并发问题：购票
+   死锁：某一个同步块同时拥有'两个以上对象的锁'时,就有可能发生'死锁问题'
 */
-package com.mi.threadlock;
+package com.mi.threadsyn.lock;
 
 public class TestDeadLock {
     public static void main(String[] args) {
@@ -23,6 +23,7 @@ class Mirror {
 
 }
 
+// 化妆
 class Makeup implements Runnable {
     int choice;
     String userName;
@@ -33,7 +34,6 @@ class Makeup implements Runnable {
         this.choice = choice;
         this.userName = userName;
     }
-
 
     private void makeup() throws InterruptedException {
         if(choice == 0) {
@@ -53,7 +53,6 @@ class Makeup implements Runnable {
                 }
             }
         }
-
     }
 
     @Override

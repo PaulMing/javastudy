@@ -6,7 +6,7 @@ package com.mi.threadjuc;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class TestJUC {
+public class TestJUCList {
     public static void main(String[] args) {
         // JUC提供的安全类型集合 -> 线程安全
         CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<String>();
