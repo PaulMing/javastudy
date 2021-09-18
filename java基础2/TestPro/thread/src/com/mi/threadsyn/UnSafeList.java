@@ -14,11 +14,12 @@ public class UnSafeList {
                 list.add(Thread.currentThread().getName());
             }).start();
         }
+        // 前面1000多线程并发执行，主线程执行到此处先sleep阻塞1000毫秒，然后再执行System.out.println(list.size());
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(list.size());// size不等于10000，有些位置数据被反复添加，数据被冲掉了 -> 加入sleep阻塞，效果会好些
+        System.out.println(list.size());
     }
 }

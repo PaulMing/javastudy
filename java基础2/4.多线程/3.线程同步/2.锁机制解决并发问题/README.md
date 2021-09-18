@@ -31,7 +31,6 @@ public class safeBuyTicket implements Runnable{
 }
 ```
 
-
 ### 同步快
 > synchronized(Obj) {};//Obj称之为同步监视器，使用共享资源[实际就是变化量(变化的对象)]作为同步监视器 -> 同步方法无需指定监视器，默认就是this，对象本身或者是class
 ```java

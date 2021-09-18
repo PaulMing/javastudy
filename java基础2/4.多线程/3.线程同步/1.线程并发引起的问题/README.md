@@ -48,7 +48,7 @@ public class UnSafeList {
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-    System.out.println(list.size());// size不等于10000，有些位置数据被反复添加，数据被冲掉了 -> 加入sleep阻塞，效果会好些
+    System.out.println(list.size());
   }
 }
 ```
