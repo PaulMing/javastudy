@@ -1,5 +1,5 @@
 /*
-    RenntrantLock可重入锁
+    ReentrantLock可重入锁
       JUC包提供的工具类，其拥有与synchronized相同的并发性和内存语义，其是显示的加锁、解锁
 */
 package com.mi.threadjuc;
