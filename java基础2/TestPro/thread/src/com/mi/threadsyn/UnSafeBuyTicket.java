@@ -1,11 +1,12 @@
 /*
-    线程优先级：1~10 -> 默认值是5，负数、越界、小数会报错
+    线程并发引起的问题：购票 -> 线程不安全
 */
 package com.mi.threadsyn;
 
 public class UnSafeBuyTicket implements Runnable{
     private int ticketNums = 10;
 
+    @Override
     public void run() {
         while(true) {
             if(ticketNums <= 0) {
