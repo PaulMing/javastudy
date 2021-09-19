@@ -119,7 +119,7 @@ class Test {
 ```java
 public class Inner {
   public void deal() {
-    // 匿名内部类：无类的名称，直接借助接口或父类完成对象的定义
+    // 匿名内部类：无类的名称，直接借助接口或父类完成对象的定义 -> 大多都是借助接口
     ILike like = new ILike() {
       @Override
       public void lamda() {
