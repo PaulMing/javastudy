@@ -1,11 +1,18 @@
 /*
-   反射：
-
+   反射；获取类对象
 */
 package com.mi.reflect;
 
 public class TestReflect {
     public static void main(String[] args) throws ClassNotFoundException {
+
+
+
+
+
+
+
+
         Class c1 = Class.forName("com.mi.reflect.User");
         Class c2 = Class.forName("com.mi.reflect.User");
         Class c3 = Class.forName("com.mi.reflect.User");

@@ -1,3 +1,8 @@
+/*
+   所有类型的Class类对象：
+      1.类加载完成后，系统就会在堆内存中产生该类的Class类型对象，仅系统可创建 && 仅能创建一次
+      2.类、接口、注解等都有Class类对象 -> 实际只要是类，类加载的时候就会自动创建类对象
+*/
 package com.mi.reflect;
 
 import java.lang.reflect.Constructor;
