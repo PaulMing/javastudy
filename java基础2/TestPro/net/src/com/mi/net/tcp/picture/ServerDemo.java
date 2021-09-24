@@ -1,9 +1,9 @@
-package com.mi.net.picture;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+/*
+   基于TCP的通信：文件传送
+   服务端
+*/
+package com.mi.net.tcp.picture;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -24,7 +24,12 @@ public class ServerDemo {
             fos.write(buffer,0,len);
         }
 
+        // 通知客户端接收完成
+        OutputStream os = socket.getOutputStream();
+        os.write("接受完毕了，可以断开了".getBytes());
+
         // 关闭资源
+        os.close();
         fos.close();
         is.close();
         socket.close();

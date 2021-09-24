@@ -1,9 +1,10 @@
-package com.mi.net.picture;
+/*
+   基于TCP的通信：文件传送
+   客户端
+*/
+package com.mi.net.tcp.picture;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
@@ -23,7 +24,21 @@ public class ClientDemo {
             os.write(buffer,0,len);
         }
 
+        // 通知服务器,传送完毕
+        socket.shutdownOutput();
+
+        // 确定服务器端接收完毕，断开连接
+        InputStream inputStream = socket.getInputStream();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        byte[] buffer2 = new byte[1024];
+        int len2;
+        while((len2 = inputStream.read(buffer2)) != -1) {
+            baos.write(buffer2,0,len2);
+        }
+
         // 关闭资源
+        baos.close();
+        inputStream.close();
         fis.close();
         os.close();
         socket.close();

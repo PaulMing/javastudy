@@ -22,8 +22,8 @@
 ``` 
 
 #### 协议
-> TCP: 传输控制协议，面向连接的可靠传输[三次握手、四次挥手]
-> UDP: 用户数据报协议，面向非连接的不可靠传输
+> TCP: 传输控制协议，面向连接的可靠传输[三次握手、四次挥手] -> 准确性高，效率较低，例如文件传输、接受邮件、远程登录
+> UDP: 用户数据报协议，面向非连接的不可靠传输 -> 效率高，准确性较低，例如微信聊天、语音视频电话等，偶尔丢包无所谓
 > -> 均具备差错控制、流量控制
 
 #### 网络编程 vs 网页编程
@@ -35,9 +35,176 @@
 > java.net包提供系列类和接口解决网络通信问题，屏蔽底层硬件相关，其提供了两种常见协议支持TCP、UDP，编程常用Socket、URL处理
 
 #### Socket编程
-> java.net.Socket类就是套接字，客户端创建套接字并尝试连接服务端的套接字，连接建立后通过I/O流通信 -> 基于TCP协议连接
+> java.net.Socket类就是套接字，客户端创建套接字并尝试连接服务端的套接字，连接建立后通过I/O流通信
 
+> 基于TCP
+```java
+/*
+   基于TCP的通信：Socket套接字
+   客户端
+*/
+package com.mi.net.tcp.chat;
 
-#### URL处理
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
+public class ClientDemo {
+  public static void main(String[] args) throws UnknownHostException {
+    InetAddress serverIp = InetAddress.getByName("127.0.0.1");
+    int port = 9999;
 
+    Socket socket = null;
+    OutputStream os = null;
+    try {
+      socket = new Socket(serverIp,port);
+      os = socket.getOutputStream();
+      os.write("Hello,你好Hou".getBytes());
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      // 关闭资源 -> 后开先关
+      if(os != null) {
+        try {
+          os.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if(socket != null) {
+        try {
+          socket.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+}
+
+/*
+  基于TCP的通信：Socket套接字
+  服务端
+*/
+package com.mi.net.tcp.chat;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ServerDemo {
+  public static void main(String[] args){
+    ServerSocket serverSocket = null;
+    Socket socket = null;
+    InputStream is = null;
+    ByteArrayOutputStream baos = null;
+
+    try {
+      serverSocket = new ServerSocket(9999);
+      socket = serverSocket.accept();
+      is = socket.getInputStream();
+
+      baos = new ByteArrayOutputStream();
+      byte[] buffer = new byte[1024];
+      int len;
+      while((len = is.read(buffer)) != -1) {
+        baos.write(buffer,0,len);
+      }
+      System.out.println(baos.toString());
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      // 关闭资源 -> 后开先关
+      if(baos != null) {
+        try {
+          baos.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if(is != null) {
+        try {
+          is.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if(socket != null) {
+        try {
+          socket.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if(serverSocket != null) {
+        try {
+          serverSocket.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+}
+```
+
+> 基于UDP
+```java
+/*
+  基于UDP的通信：
+    发送包时并不用关注'接收方能否接收到'，直接发送即可
+*/
+package com.mi.net.udp;
+
+import java.io.IOException;
+import java.net.*;
+
+public class ClientDemo {
+  public static void main(String[] args) throws IOException {
+    // 创建socket
+    DatagramSocket socket = new DatagramSocket();
+
+    // 创建包
+    String msg = "测试数据";
+    InetAddress localhost = InetAddress.getByName("localhost");
+    int port = 9000;
+    DatagramPacket packet = new DatagramPacket(msg.getBytes(),0,msg.getBytes().length,localhost,port);
+
+    // 发送包
+    socket.send(packet);
+
+    // 关闭资源
+    socket.close();
+  }
+}
+
+/*
+  基于UDP的通信：
+*/
+package com.mi.net.udp;
+
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
+public class ServerDemo {
+  public static void main(String[] args) throws Exception {
+    // 创建服务 -> 开放端口
+    DatagramSocket socket = new DatagramSocket(9000);
+    // 接收数据包
+    byte[] buffer = new byte[1024];
+    DatagramPacket packet = new DatagramPacket(buffer,0,buffer.length);
+
+    socket.receive(packet);//阻塞接收
+
+    System.out.println(packet.getAddress().getHostAddress());
+    System.out.println(new String(packet.getData(),0,packet.getLength()));
+
+    // 关闭连接
+    socket.close();
+  }
+}
+```

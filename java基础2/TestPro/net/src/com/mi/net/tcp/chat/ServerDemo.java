@@ -2,7 +2,7 @@
    基于TCP的通信：Socket套接字
    服务端
 */
-package com.mi.net.tcp;
+package com.mi.net.tcp.chat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
