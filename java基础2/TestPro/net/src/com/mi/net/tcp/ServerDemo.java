@@ -1,9 +1,9 @@
 /*
+   基于TCP的通信：Socket套接字
    服务端
 */
 package com.mi.net.tcp;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,6 +16,7 @@ public class ServerDemo {
         Socket socket = null;
         InputStream is = null;
         ByteArrayOutputStream baos = null;
+
         try {
             serverSocket = new ServerSocket(9999);
             socket = serverSocket.accept();
@@ -25,7 +26,7 @@ public class ServerDemo {
             byte[] buffer = new byte[1024];
             int len;
             while((len = is.read(buffer)) != -1) {
-                baos.write(buffer,0,len)
+                baos.write(buffer,0,len);
             }
             System.out.println(baos.toString());
         } catch (IOException e) {

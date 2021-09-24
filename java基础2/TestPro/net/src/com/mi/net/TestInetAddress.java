@@ -19,16 +19,9 @@ public class TestInetAddress {
         // 获取xx IP地址
         InetAddress inetAddress3 = InetAddress.getByName("www.baidu.com");
         System.out.println(inetAddress3);
-
-
         inetAddress3.getAddress();// 字节数组
         inetAddress3.getHostAddress();// ip
         inetAddress3.getCanonicalHostName();// 规范名字，实际也是ip
         inetAddress3.getHostName();// 主机名
-
-
-
-
-
     }
 }

@@ -1,4 +1,5 @@
 /*
+   基于TCP的通信：Socket套接字
    客户端
 */
 package com.mi.net.tcp;
@@ -8,7 +9,6 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.nio.charset.StandardCharsets;
 
 public class ClientDemo {
     public static void main(String[] args) throws UnknownHostException {
@@ -20,7 +20,7 @@ public class ClientDemo {
         try {
             socket = new Socket(serverIp,port);
             os = socket.getOutputStream();
-            os.write("".getBytes());
+            os.write("Hello,你好Hou".getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
