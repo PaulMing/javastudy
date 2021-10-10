@@ -20,7 +20,7 @@
 
 > 软件：
 > 1. 下载安装：可执行文件或压缩文件的方式下载
-> 2. 文件目录结构
+> 2. 文件目录结构 [了解目录结构，了解配置，主要是配置]
 >     bin是核心文件，conf是配置
 
 
@@ -54,3 +54,35 @@
 > web的本质就是C/S架构模式，也就是客户端发送请求到服务器，底层就是通过'请求报文'经过7层网络协议到达服务器，服务器解析相关内容返回'响应报文'，也就是开发者仅关注应用层协议即可,常用的就是HTTP、HTTPS、Websocket等
 
 
+
+## Maven
+> 背景：
+
+
+> 环境搭建：
+> https://maven.apache.org/
+
+> 下载后解压即可，
+
+
+配合环境变量：
+M2_HOME C:\maven\apache-maven-3.8.3\bin maven目录下的bin目录 -> 其它框架spring Boot， spring cloud都会使用M2_HOME环境变量
+
+MAVEN_HOME C:\maven\apache-maven-3.8.3 maven的目录
+
+
+path中添加 MAVEN_HOME   %%就是引用
+
+
+> 测试安装成功
+win+R, 输入mvn -version
+
+
+
+> 成功后：
+> 1. maven配置阿里云镜像
+C:\maven\apache-maven-3.8.3\conf 下修改settings.xml  
+
+
+> 本地仓库：
+> 
