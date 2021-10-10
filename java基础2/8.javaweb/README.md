@@ -86,3 +86,18 @@ C:\maven\apache-maven-3.8.3\conf 下修改settings.xml
 
 > 本地仓库：
 > 
+
+
+
+> IDEA中使用Maven:
+> 1. 启动IDEA
+> 2. 创建一个Maven项目
+     创建javaweb项目
+     创建空maven项目
+
+  3. idea中的Maven配置
+
+
+
+  创建一个普通的maven项目
+  
