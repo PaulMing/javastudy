@@ -13,7 +13,7 @@ public class Person {
   // 访问/权限修饰符 [特征修饰符] 数据类型 属性名 = [初始值]
   public String name;
   public int age;
-  public String sex; 
+  public String sex;
 
 
   // 方法 -> 描述动态操作
