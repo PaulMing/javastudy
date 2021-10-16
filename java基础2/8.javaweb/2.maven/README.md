@@ -51,3 +51,16 @@
 ![](assets/IDEA使用maven/创建step5.png)
 > 3. IDEA配置Maven相关
 ![](assets/IDEA使用maven/配置maven.png)
+
+
+
+### IDEA中配置tomcat
+> 1. 启动IDEA
+> 2. 创建Maven项目[其提供很多项目模板，选择Javaweb模板]
+![](assets/IDEA使用maven/创建step1.png)
+![](assets/IDEA使用maven/创建step2.png)
+![](assets/IDEA使用maven/创建step3.png)
+![](assets/IDEA使用maven/创建step4.png)
+![](assets/IDEA使用maven/创建step5.png)
+> 3. IDEA配置Maven相关
+![](assets/IDEA使用maven/配置maven.png)
