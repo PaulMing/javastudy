@@ -3,10 +3,10 @@
 
 ### 环境搭建
 > 1. 官网下载解压缩即可：https://maven.apache.org/download.cgi
-![](assets/下载.png)
+![](assets/环境搭建/下载.png)
 
 > 2. 目录结构
-![](assets/目录结构.png)
+![](assets/环境搭建/目录结构.png)
 
 > 3. 配置环境变量
 > [1].MAVEN_HOME: C:\maven\apache-maven-3.8.3  -> 根目录
@@ -21,34 +21,33 @@
 > 5. 修改镜像 -> 国外镜像拉取很慢，使用国内阿里云镜像
 > [1].找到配置文件: C:\maven\apache-maven-3.8.3\conf\setting.xml
 > [2].修改配置文件中的mirrors部分
-![](assets/修改镜像.png)
+![](assets/环境搭建/修改镜像.png)
 ```xml
-  // 阿里云镜像
+  <!-- 阿里云镜像 -->
   <mirror>
     <id>nexus-aliyun</id>
     <mirrorOf>*,!jeecg,!jeecg-snapshots</mirrorOf>
     <name>Nexus aliyun</name>
-    <url>http://maven.aliyun.com/nexus/content/groups/public</url> 
+    <url>http://maven.aliyun.com/nexus/content/groups/public</url>
   </mirror>
 ```
 
 > 6. 创建本地仓库
 > [1].找到配置文件: C:\maven\apache-maven-3.8.3\conf\setting.xml
 > [2].修改配置文件中的localRepository部分 -> 前提：根目录下创建maven-repo
-![](assets/创建本地仓库.png)
+![](assets/环境搭建/创建本地仓库.png)
 ```xml
-  // 本地仓库
+  <!-- 修改仓库位置 -->
   <localRepository>C:\maven\apache-maven-3.8.3\maven-repo</localRepository>
 ```
 
 ### IDEA中使用Maven
 > 1. 启动IDEA
-> 2. 创建一个Maven项目
-     创建javaweb项目
-     创建空maven项目
-
-  3. idea中的Maven配置
-
-
-
-  创建一个普通的maven项目
+> 2. 创建Maven项目[其提供很多项目模板，选择Javaweb模板]
+![](assets/IDEA使用maven/创建step1.png)
+![](assets/IDEA使用maven/创建step2.png)
+![](assets/IDEA使用maven/创建step3.png)
+![](assets/IDEA使用maven/创建step4.png)
+![](assets/IDEA使用maven/创建step5.png)
+> 3. IDEA配置Maven相关
+![](assets/IDEA使用maven/配置maven.png)
