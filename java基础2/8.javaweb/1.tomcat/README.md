@@ -2,20 +2,20 @@
 
 ### 环境搭建
 > 1. 官网下载解压缩即可：https://tomcat.apache.org
-![](assets/下载.png)
+![](assets/环境搭建/下载.png)
 
 > 2. 目录结构
-![](assets/目录结构.png)
+![](assets/环境搭建/目录结构.png)
 
 > 3. 启动/关闭
 > 启动：双击'bin/startup.bat',之后会运行'命令行窗口'，其就是整个服务器运行情况
 > 关闭：双击'bin/stutdown.bat' -> 或者直接关闭'命令行窗口'即可
-![](assets/启动关闭.png)
+![](assets/环境搭建/启动关闭.png)
 
 > 4. web项目配置及存放位置
 > 本质：请求打到服务器上获取资源 -> 需要配置请求地址、端口、资源存放位置[其提供默认配置，用户可灵活修改]
-![](assets/配置文件.png)
-![](assets/web项目.png)
+![](assets/环境搭建/配置文件.png)
+![](assets/环境搭建/web项目.png)
 
 > 目录参考：
 + webapps                # tomcat设置的web目录
@@ -31,3 +31,13 @@
       - css
       - img
     - ....               # 其它
+
+### IDEA中配置tomcat
+> 最新版IDEA需手动添加tomcat插件，旧版IDEA内置tomcat插件，开发者可忽略第1步，直接进行第2步的配置即可
+> 1. 添加tomcat插件
+![](assets/idea配置tomcat/安装插件step1.png)
+![](assets/idea配置tomcat/安装插件step2.png)
+> 2. 配置tomcat
+![](assets/idea配置tomcat/配置step1.png)
+![](assets/idea配置tomcat/配置step2.png)
+![](assets/idea配置tomcat/配置step3.png)
