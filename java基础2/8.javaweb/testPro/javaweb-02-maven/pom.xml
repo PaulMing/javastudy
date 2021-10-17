@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Maven版本与头文件 -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!--  Maven配置的GAV -->
   <groupId>com.tt</groupId>
-  <artifactId>javaweb-01-maven</artifactId>
+  <artifactId>javaweb-02-maven</artifactId>
   <version>1.0-SNAPSHOT</version>
-
-  <!--
-     项目打包方式：
-       jar: java应用
-       war: javaweb应用
-  -->
   <packaging>war</packaging>
 
-  <name>javaweb-01-maven Maven Webapp</name>
+  <name>javaweb-02-maven Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
-  <!-- 配置 -->
   <properties>
-    <!-- 项目默认构建编码 -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- 编码版本-->
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
-  <!-- 项目依赖 -->
   <dependencies>
-    <!-- 具体依赖的jar包配置文件-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5-20081211</version>
+    </dependency>
   </dependencies>
 
-  <!-- 项目构建相关  -->
   <build>
-    <finalName>javaweb-01-maven</finalName>
+    <finalName>javaweb-02-maven</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
@@ -76,24 +68,5 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <!-- 配置resources，防止资源导出失败 -->
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <excludes>
-          <exclude>**/*.properties</exclude>
-          <exclude>**/*.xml</exclude>
-        </excludes>
-        <filtering>false</filtering>
-      </resource>
-      <resource>
-        <directory>src/main/java</directory>
-        <includes>
-          <include>**/*.properties</include>
-          <include>**/*.xml</include>
-        </includes>
-        <filtering>false</filtering>
-      </resource>
-    </resources>
   </build>
 </project>

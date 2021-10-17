@@ -1,0 +1,22 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+<!--  注册servlet -->
+  <servlet>
+    <servlet-name>helloServlet</servlet-name>
+    <servlet-class>com.tt.servlet.HelloServlet</servlet-class>
+  </servlet>
+<!--  一个 servlet 对应一个Mapping 映射-->
+  <servlet-mapping>
+    <servlet-name>helloServlet</servlet-name>
+<!--    请求路径 -->
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+
+
+
+  <display-name>Archetype Created Web Application</display-name>
+</web-app>
