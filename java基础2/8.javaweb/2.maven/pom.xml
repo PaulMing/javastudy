@@ -9,9 +9,10 @@
   <artifactId>javaweb-01-maven</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <!-- 项目打包方式
-       jar: java应用
-       war: javaweb应用
+  <!-- 
+    项目打包方式：
+      jar: java应用
+      war: javaweb应用
   -->
   <packaging>war</packaging>
 

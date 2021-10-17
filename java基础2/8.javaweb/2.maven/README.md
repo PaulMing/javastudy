@@ -43,7 +43,7 @@
 
 ### IDEA中使用Maven
 > 1. 启动IDEA
-> 2. 创建Maven项目[其提供很多项目模板，选择Javaweb模板]
+> 2. 使用maven创建javaweb项目[其提供很多项目模板，选择Javaweb模板]
 ![](assets/idea使用maven/创建step1.png)
 ![](assets/idea使用maven/创建step2.png)
 ![](assets/idea使用maven/创建step3.png)
@@ -51,3 +51,11 @@
 ![](assets/idea使用maven/创建step5.png)
 > 3. IDEA配置Maven相关
 ![](assets/idea使用maven/配置maven.png)
+> 4. 当前项目Maven配置文件 -> 参考pom.xml
+![](assets/pom.png)
+
+### IDEA中javaWeb项目与Tocmat关联
+> 本质：将javaweb项目部署到tomcat服务器上，idea通过配置化的方式操作服务器[前提：idea配置了maven、tomcat]
+![](assets/关联/step1.png)
+![](assets/关联/step2.png)
+![](assets/关联/step3.png)
