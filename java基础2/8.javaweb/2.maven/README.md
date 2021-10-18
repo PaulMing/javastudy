@@ -54,7 +54,7 @@
 > 4. 当前项目Maven配置文件 -> 参考pom.xml
 ![](assets/pom.png)
 
-### IDEA中javaWeb项目与Tocmat关联
+### IDEA中javaWeb项目与Tomcat关联
 > 本质：将javaweb项目部署到tomcat服务器上，idea通过配置化的方式操作服务器[前提：idea配置了maven、tomcat]
 ![](assets/关联/step1.png)
 ![](assets/关联/step2.png)
