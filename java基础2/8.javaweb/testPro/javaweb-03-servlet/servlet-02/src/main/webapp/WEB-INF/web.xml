@@ -37,4 +37,13 @@
     <servlet-name>ServletParam</servlet-name>
     <url-pattern>/getParam</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>GetProp</servlet-name>
+    <servlet-class>com.tt.servlet.GetProp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetProp</servlet-name>
+    <url-pattern>/getProp</url-pattern>
+  </servlet-mapping>
 </web-app>

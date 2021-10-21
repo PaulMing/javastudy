@@ -2,12 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.tt</groupId>
     <artifactId>javaweb-03-servlet</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
     <!-- 子模块 -->
     <modules>
         <module>servlet-01</module>
@@ -38,16 +37,15 @@
     </dependencies>
 
     <build>
-        <finalName>javaweb-02-maven</finalName>
         <!-- 配置resources，防止资源导出失败 -->
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
-                <excludes>
-                    <exclude>**/*.properties</exclude>
-                    <exclude>**/*.xml</exclude>
-                </excludes>
-                <filtering>false</filtering>
+                <directory>src/main/resources/</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
             </resource>
             <resource>
                 <directory>src/main/java</directory>
@@ -55,7 +53,7 @@
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
                 </includes>
-                <filtering>false</filtering>
+                <filtering>true</filtering>
             </resource>
         </resources>
     </build>

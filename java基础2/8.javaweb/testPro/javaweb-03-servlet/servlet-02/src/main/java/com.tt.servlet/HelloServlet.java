@@ -26,6 +26,12 @@ public class HelloServlet extends HttpServlet {
             RequestDispatcher requestDispatcher = context.getRequestDispatcher("/share");//转发的请求路径
             requestDispatcher.forward(req,resp);//调用forward实现请求转发
 
+            读取资源文件：
+            1.java目录下新建
+            2.resources下新建 -> 建议这个
+            -> 均被打包到了同一路径下，classes下，这个路径也被称之为classpath
+
+
 
 
 
