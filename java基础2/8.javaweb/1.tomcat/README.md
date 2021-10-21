@@ -1,4 +1,5 @@
-## tomcat -> 服务器
+## tomcat -> Apache基金会下开源项目
+> 其是由Apache、Sun和其它公司以及个人共同开发而成，因为Sun的参与，tomcat总能很好支持servlet、jsp -> 实际其就是'服务器'，提供配置文件进行'配置化操作'，并不关心静态or动态web，涉及到动态web技术配置servlet即可
 
 ### 环境搭建
 > 1. 官网下载解压缩即可：https://tomcat.apache.org
