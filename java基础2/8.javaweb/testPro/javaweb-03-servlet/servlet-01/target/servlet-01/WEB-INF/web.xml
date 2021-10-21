@@ -20,28 +20,4 @@
     <servlet-name>helloServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>ErrorServlet</servlet-name>
-    <servlet-class>com.tt.servlet.ErrorServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ErrorServlet</servlet-name>
-    <url-pattern>/*</url-pattern>
-  </servlet-mapping>
-
-
-<!--
-     其是完全匹配，例如/hello 与 /*
-     /hello  -> 完全匹配
-     /*      -> 除了/hello的其它
-
-
-
-      默认请求路径：其比默认配置优先级高,
-      <url-pattern>/*</url-pattern>
-
-      自定义后缀
-      *前面不能加项目映射的路径
-      <url-pattern>*.xx</url-pattern>
--->
 </web-app>
