@@ -6,11 +6,15 @@
 </head>
 <body>
 <h2>Hello World!</h2>
-
-
-<form action="${pageContext.request.getContextPath()}/login" method="get">
+<form action="${pageContext.request.getContextPath()}/login" method="post">
     用户名：<input type="text" name="username">
     密码：<input type="password" name="password">
+    爱好：
+    篮球<input type="checkbox" name="key" value="篮球">
+    足球<input type="checkbox" name="key" value="足球">
+    台球<input type="checkbox" name="key" value="台球">
+    网球<input type="checkbox" name="key" value="网球">
+    <br/>
     <input type="submit">
 </form>
 </body>
