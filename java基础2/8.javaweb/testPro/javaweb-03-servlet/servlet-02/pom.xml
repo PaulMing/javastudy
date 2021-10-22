@@ -11,6 +11,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>servlet-02</artifactId>
+  <!-- 打包方式 -->
   <packaging>war</packaging>
 
 
