@@ -13,9 +13,7 @@ public class ErrorServlet extends HttpServlet {
         System.out.println("servlet error调用成功");
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
-
         PrintWriter writer = resp.getWriter();
-//        writer.print("<h1>404 资源找不到</h1>");
         writer.print("<html><body><h1>404 资源找不到</h1></body></html>");
     }
 

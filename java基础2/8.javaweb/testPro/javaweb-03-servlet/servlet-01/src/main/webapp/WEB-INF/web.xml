@@ -11,7 +11,14 @@
     <param-value>jdbc:mysql://localhost:3306/mybatis</param-value>
   </context-param>
 
-  <!-- servlet容器 -->
+  <!--
+    servlet容器：
+      1.其是完全匹配：例如/hello 与/*
+        /hello： 仅匹配/hello
+        /* : 除了/hello的其它 -> 大多作为默认请求路径，其比默认配置优先级高，例如/默认匹配index.jsp，写了/*则优先匹配/*所指的servlet
+
+      2. 自定义后缀：*.xx -> *部分不要出现项目相关的映射路径 /xx/a.xx
+  -->
   <servlet>
     <servlet-name>helloServlet</servlet-name>
     <servlet-class>com.tt.servlet.HelloServlet</servlet-class>
@@ -28,20 +35,4 @@
     <servlet-name>ErrorServlet</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
-
-
-<!--
-     其是完全匹配，例如/hello 与 /*
-     /hello  -> 完全匹配
-     /*      -> 除了/hello的其它
-
-
-
-      默认请求路径：其比默认配置优先级高,
-      <url-pattern>/*</url-pattern>
-
-      自定义后缀
-      *前面不能加项目映射的路径
-      <url-pattern>*.xx</url-pattern>
--->
 </web-app>
