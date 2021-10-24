@@ -18,18 +18,13 @@ public class ServletParam extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.getWriter().print(url);
 
-
         // 请求转发
         RequestDispatcher requestDispatcher = context.getRequestDispatcher("/share");//转发的请求路径
         requestDispatcher.forward(req,resp);//调用forward实现请求转发
-
-
-
-
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req, resp);
+        doGet(req, resp);
     }
 }

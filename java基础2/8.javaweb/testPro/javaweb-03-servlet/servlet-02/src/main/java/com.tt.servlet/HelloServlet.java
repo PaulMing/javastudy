@@ -19,8 +19,8 @@ public class HelloServlet extends HttpServlet {
               context.setAttribute("username","xx");
               context.getAttribute("username");
 
-            2.获取初始化参数：web.xml配置初始化参数
-
+            2.获取初始化参数：web.xml配置初始化参数 or 通过servletContext接口注入初始化参数
+              String url = context.getInitParameter("url");
 
             3.请求转发：
               -> 请求转发的url不会改变，重定向会改变url[后端直接将请求url做了修改]
@@ -28,20 +28,16 @@ public class HelloServlet extends HttpServlet {
               requestDispatcher.forward(req,resp);//调用forward实现请求转发
 
             4.读取资源文件：
-
-
-
-
-
-            请求转发 -> url不会改变，重定向才会改变，重定向是后端直接将请求url做了修改
-            RequestDispatcher requestDispatcher = context.getRequestDispatcher("/share");//转发的请求路径
-
-
-            ：
-            1.java目录下新建
-            2.resources下新建 -> 建议这个
-            -> 均被打包到了同一路径下，classes下，这个路径也被称之为classpath
-
+              -> 读取资源：1.new properties();  2.load(流)
+              -> 资源文件目录：main/resources下创建资源，打包后的路径target/classes/xx.properties，classes目录也称之为classpath
+              InputStream stream = context.getResourceAsStream("/WEB-INF/classes/db.properties");//路径：项目构建后的路径
+              Properties prop = new Properties();
+              prop.load(stream);
+              String username = prop.getProperty("username");
+              String password = prop.getProperty("password");
+              resp.setContentType("text/html");
+              resp.setCharacterEncoding("utf-8");
+              resp.getWriter().print(username + ":" + password);
         */
         System.out.println("servlet调用成功");
         ServletContext context = this.getServletContext();
@@ -51,6 +47,6 @@ public class HelloServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doGet(req,resp);
+        doGet(req,resp);
     }
 }

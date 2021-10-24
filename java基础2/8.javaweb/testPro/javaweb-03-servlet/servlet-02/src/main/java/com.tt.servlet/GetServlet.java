@@ -12,7 +12,6 @@ public class GetServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = this.getServletContext();
         Object username = context.getAttribute("username");
-
         System.out.println(username);
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
@@ -21,6 +20,6 @@ public class GetServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req, resp);
+        doGet(req, resp);
     }
 }
