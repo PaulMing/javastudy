@@ -1,3 +1,8 @@
+## 路径匹配
+> Tomcat服务器中配置的servlet容器映射关系：路径与对应的java处理程序 -> 默认路径读取index.jsp[等同于/index.jsp,省略了index.jsp，其它也可以/success.jsp等]，其它路径会根据servlet配置的映射关系进行处理
+
+```xml
+<!-- web.xml配置servlet映射关系 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -36,3 +41,4 @@
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
 </web-app>
+```
