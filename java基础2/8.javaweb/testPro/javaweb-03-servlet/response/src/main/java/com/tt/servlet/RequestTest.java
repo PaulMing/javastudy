@@ -14,6 +14,7 @@ public class RequestTest extends HttpServlet {
         String password = req.getParameter("password");
         System.out.println(username + ":" + password);
 
+        // 重定向
         resp.sendRedirect("/s3/success.jsp");
     }
 
