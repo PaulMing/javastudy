@@ -21,7 +21,7 @@ public class HelloServlet extends HttpServlet {
           String url = context.getInitParameter("url");
 
         3.请求转发：
-          -> 请求转发的url不会改变，重定向会改变url[后端直接将请求url做了修改]
+          -> 请求转发的url不会改变[307状态码]，重定向会改变url[后端直接将请求url做了修改，302状态码]
           RequestDispatcher requestDispatcher = context.getRequestDispatcher("/share");//转发的请求路径
           requestDispatcher.forward(req,resp);//调用forward实现请求转发
 
