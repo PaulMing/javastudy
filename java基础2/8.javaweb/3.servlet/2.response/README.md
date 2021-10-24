@@ -3,10 +3,11 @@
 
 ### 常见应用：
 > 1. 向客户端发送信息
-> 2. 下载文件
+> 2. 客户端下载文件
 > 3. 重定向
 
 ```java
+// 客户端下载文件
 package com.tt.servlet;
 
 public class FileServlet extends HttpServlet {
@@ -42,6 +43,34 @@ public class FileServlet extends HttpServlet {
     // 7.关闭数据流 -> 后开先关
     in.close();
     out.close();
+  }
+
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    doGet(req, resp);
+  }
+}
+```
+
+```java
+// 重定向
+package com.tt.servlet;
+
+public class RequestTest extends HttpServlet {
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    System.out.println("get请求进入");
+    String username = req.getParameter("username");
+    String password = req.getParameter("password");
+    System.out.println(username + ":" + password);
+
+    /*
+      重定向：
+        -> 底层实现：1.设置'客户端请求的url' 2.设置响应状态码;//客户端拿到302状态码会自动跳转
+        resp.setHeader("location",'/s3/success.jsp');
+        resp.setStatus(302);
+    */
+    resp.sendRedirect("/s3/success.jsp");//语法糖：客户端设置新url + 响应状态码
   }
 
   @Override
