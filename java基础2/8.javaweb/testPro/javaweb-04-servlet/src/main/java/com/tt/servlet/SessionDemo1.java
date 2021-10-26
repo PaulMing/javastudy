@@ -18,6 +18,7 @@ public class SessionDemo1 extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
+        // 获取session
         HttpSession session = req.getSession();
         session.setAttribute("name","kkk");
         session.setAttribute("test",new Person("curry",18));
