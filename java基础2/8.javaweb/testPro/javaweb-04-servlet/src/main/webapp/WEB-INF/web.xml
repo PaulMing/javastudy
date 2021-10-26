@@ -7,13 +7,11 @@
 
   <!-- servlet容器 -->
   <servlet>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.tt.servlet.LoginServlet</servlet-class>
+    <servlet-name>CookieDemo1</servlet-name>
+    <servlet-class>com.tt.servlet.CookieDemo1</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/login</url-pattern>
+    <servlet-name>CookieDemo1</servlet-name>
+    <url-pattern>/cookie</url-pattern>
   </servlet-mapping>
-
-
 </web-app>
