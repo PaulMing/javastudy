@@ -14,4 +14,34 @@
     <servlet-name>CookieDemo1</servlet-name>
     <url-pattern>/cookie</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>SessionDemo1</servlet-name>
+    <servlet-class>com.tt.servlet.SessionDemo1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDemo1</servlet-name>
+    <url-pattern>/session1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SessionDemo2</servlet-name>
+    <servlet-class>com.tt.servlet.SessionDemo2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDemo2</servlet-name>
+    <url-pattern>/session2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SessionDemo3</servlet-name>
+    <servlet-class>com.tt.servlet.SessionDemo3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDemo3</servlet-name>
+    <url-pattern>/session3</url-pattern>
+  </servlet-mapping>
+
+  <!-- 设置session默认失效时间 -->
+  <session-config>
+    <!-- 15分钟后失效 -->
+    <session-timeout>15</session-timeout>
+  </session-config>
 </web-app>
