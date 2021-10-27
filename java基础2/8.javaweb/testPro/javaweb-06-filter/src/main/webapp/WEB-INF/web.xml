@@ -29,4 +29,14 @@
     <!-- 只要是如下路径都要进行过滤 -->
     <url-pattern>/filter/*</url-pattern>
   </filter-mapping>
+
+  <!-- 监听器 -->
+  <listener>
+    <listener-class>com.tt.listener.OnlineCountListener</listener-class>
+  </listener>
+
+  <!-- session过期时间 -->
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>
 </web-app>
