@@ -27,6 +27,11 @@
     <servlet-name>helloServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+  <!-- 一个servlet可以对应多个servlet-mapping -->
+  <servlet-mapping>
+    <servlet-name>helloServlet</servlet-name>
+    <url-pattern>/hello1</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>ErrorServlet</servlet-name>
     <servlet-class>com.tt.servlet.ErrorServlet</servlet-class>
