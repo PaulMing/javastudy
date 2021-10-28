@@ -18,6 +18,26 @@
     <servlet-name>ShowServlet</servlet-name>
     <url-pattern>/filter/character</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.tt.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/login</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- 过滤器 -->
   <filter>
@@ -28,6 +48,15 @@
     <filter-name>CharacterEncodingFilter</filter-name>
     <!-- 只要是如下路径都要进行过滤 -->
     <url-pattern>/filter/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>SysFilter</filter-name>
+    <filter-class>com.tt.filter.SysFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SysFilter</filter-name>
+    <!-- 只要是如下路径都要进行过滤 -->
+    <url-pattern>/success.jsp</url-pattern>
   </filter-mapping>
 
   <!-- 监听器 -->
