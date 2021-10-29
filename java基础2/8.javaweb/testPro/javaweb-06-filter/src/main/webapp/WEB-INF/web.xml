@@ -27,18 +27,6 @@
     <url-pattern>/servlet/login</url-pattern>
   </servlet-mapping>
 
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- 过滤器 -->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
