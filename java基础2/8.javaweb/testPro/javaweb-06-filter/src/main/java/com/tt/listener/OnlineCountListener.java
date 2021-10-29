@@ -4,6 +4,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
+// 类实现相关监听器接口
 public class OnlineCountListener implements HttpSessionListener {
     // 创建session监听：创建session会触发此事件
     @Override
