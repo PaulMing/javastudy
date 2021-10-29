@@ -6,7 +6,7 @@ public class TestJdbc {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         String url = "jdbc:mysql://localhost:3306/jdbc?useUnicode=true&characterEncoding=utf-8";
         String username = "root";
-        String password = "123456";
+        String password = "xxxxxx";
 
         // 1. 加载驱动
         Class.forName("com.mysql.jdbc.Driver");

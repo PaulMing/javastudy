@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tt</groupId>
-    <artifactId>javaweb-06-jdbc</artifactId>
+    <artifactId>javaweb-07-jdbc</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 

@@ -7,7 +7,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class TestJdbc1 {
-
     // @Test注解仅在方法上有效，只要添加了该注解的方法，便可直接执行
     @Test
     public void test() throws ClassNotFoundException, SQLException {
@@ -35,7 +34,6 @@ public class TestJdbc1 {
             connection.prepareStatement(sql2).executeUpdate();
 
             connection.commit();//sql均执行成功，则提交事务
-
         } catch (Exception e) {
             try {
                 // 若出现异常，则回滚事务
